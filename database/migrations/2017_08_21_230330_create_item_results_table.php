@@ -21,6 +21,7 @@ class CreateItemResultsTable extends Migration
             $table->integer('trouble_id')->unsigned()->comment('故障原因ID');
             $table->timestamps();
         });
+
     }
 
     /**
