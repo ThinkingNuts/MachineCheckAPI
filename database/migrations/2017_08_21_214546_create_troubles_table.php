@@ -20,15 +20,10 @@ class CreateTroublesTable extends Migration
         });
 
         Schema::create('check_item_trouble', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('check_item_id')->unsigned()->comment('检查项ID');
             $table->integer('trouble_id')->unsigned()->comment('故障原因ID');
-
-            $table->foreign('check_item_id')->references('id')->on('check_items')
-                ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('trouble_id')->references('id')->on('troubles')
-                ->onUpdate('cascade')->onDelete('cascade');
-
-            $table->primary(['check_item_id', 'trouble_id']);
+            $table->timestamps();
         });
     }
 

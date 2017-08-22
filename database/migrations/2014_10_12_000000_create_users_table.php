@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('job_number')->unique()->comment('工号');
             $table->string('name')->comment('姓名');
             $table->string('mobile')->comment('手机号');
-            $table->string('department')->comment('所属部门');
+            $table->integer('department_id')->unsigned()->comment('所属部门ID');
             $table->string('password')->comment('密码');
             $table->timestamps();
         });
