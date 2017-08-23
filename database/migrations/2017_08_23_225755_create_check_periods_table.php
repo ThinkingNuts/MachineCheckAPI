@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDeviceTypesTable extends Migration
+class CreateCheckPeriodsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateDeviceTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('device_types', function (Blueprint $table) {
+        Schema::create('check_periods', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('name')->comment('设备类型名称');
+            $table->string('name')->comment('检查周期');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateDeviceTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('device_types');
+        Schema::dropIfExists('check_periods');
     }
 }

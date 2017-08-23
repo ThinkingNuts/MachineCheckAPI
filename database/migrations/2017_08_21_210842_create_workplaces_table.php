@@ -18,6 +18,7 @@ class CreateWorkplacesTable extends Migration
             $table->integer('product_line_id')->unsigned()->comment('产线ID');
             $table->integer('number')->unique()->comment('工位编号');
             $table->string('name')->comment('工位名称')->nullable();
+            $table->timestamps();
         });
     }
 

@@ -17,6 +17,7 @@ class CreateDepartmentsTable extends Migration
             $table->increments('id');
             $table->integer('number')->unique()->comment('部门编号');
             $table->string('name')->nullable()->comment('部门名称');
+            $table->timestamps();
         });
     }
 

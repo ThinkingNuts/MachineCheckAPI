@@ -18,6 +18,7 @@ class CreateProductLinesTable extends Migration
             $table->integer('department_id')->unsigned()->comment('部门ID');
             $table->integer('number')->unique()->comment('产线编号');
             $table->string('name')->nullable()->comment('产线名称');
+            $table->timestamps();
         });
     }
 

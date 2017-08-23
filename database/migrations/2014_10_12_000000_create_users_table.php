@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('mobile')->comment('手机号');
             $table->integer('department_id')->unsigned()->comment('所属部门ID');
             $table->string('password')->comment('密码');
+            $table->unsignedTinyInteger('sort')->default(100)->comment('排序字段,越小越靠前');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDeviceTypesTable extends Migration
+class CreateRegionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateDeviceTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('device_types', function (Blueprint $table) {
+        Schema::create('regions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('name')->comment('设备类型名称');
+            $table->integer('number')->unique()->comment('区域编号');
+            $table->string('name')->nullable()->comment('区域名称');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateDeviceTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('device_types');
+        Schema::dropIfExists('regions');
     }
 }

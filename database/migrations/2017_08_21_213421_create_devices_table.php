@@ -21,6 +21,7 @@ class CreateDevicesTable extends Migration
             $table->integer('name')->comment('设备名称');
             $table->integer('manufacturer')->nullable()->comment('设备出产商');
             $table->integer('production_date')->nullable()->comment('设备出产日期');
+            $table->unsignedTinyInteger('sort')->default(100)->comment('排序字段,越小越靠前');
             $table->timestamps();
         });
     }
