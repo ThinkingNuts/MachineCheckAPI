@@ -16,6 +16,7 @@ class CreateRepairRecordsTable extends Migration
         Schema::create('repair_records', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('device_id')->unsigned()->comment('设备ID');
+            $table->string('measures')->unsigned()->comment('采取措施');
             $table->string('superior_opinion')->nullable()->comment('班组长意见');
             $table->string('repair_opinion')->nullable()->comment('维修意见');
             $table->enum('is_repaired', ['T', 'F'])->nullable()->index()->comment('设备是否已维修');
